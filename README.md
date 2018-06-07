@@ -23,7 +23,7 @@ Macユーザを前提に作っていますので，それ以外の方はTAに尋
 1. `git clone https://github.com/kenki931128/rails_kadai.git`
 2. `cd rails_kadai`
 3. `rm -rf .git/`
-4. `./setup` (VirtualBoxとVagrantがインストール済みなら不要)
+4. `./setup.sh` (`./setup`) (VirtualBoxとVagrantがインストール済みなら不要)
 
 ## Ruby on railsの準備
 
@@ -58,7 +58,7 @@ vagrantとは仮想環境を手軽に構築するためのコマンドライン�
 |仮想マシンの停止|`vagrant halt`|
 |仮想マシンの状態の確認|`vagrnt status`|
 |仮想マシンへのシェルログイン|`vagrant ssh`|
-|仮想マシンの削除|`vagrant remove <box_name>`|
+|仮想マシンの削除|`vagrant box remove <box_name>`|
 
 ## Herokuへのアップロード方法
 
