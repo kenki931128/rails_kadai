@@ -1,15 +1,18 @@
 # ROR reference for Windows user
 
-##1. Install VirtualBox
+If you want to use Virtual machine that would not affect your computer environment, you can refer the following steps to build a simple sample Rails application.
+Otherwise, you can do with your own preference.
+
+## 1. Install VirtualBox
 [Download VirtualBox](https://www.virtualbox.org/wiki/Downloads) <br/>
 Select Windows hosts
 
-##2. Install Vagrant 
+## 2. Install Vagrant 
 [Download Vagrant](https://releases.hashicorp.com/vagrant/2.0.3/) <br/>
 Select vagrant_2.0.3_x86_64.msi
 
 
-##3. Set VM
+## 3. Set VM
 #### (1) Make directory
 ```code
 > mkdir c:\assmt
@@ -42,7 +45,7 @@ When you want to stop the VM, run:
 > vagrant halt
 ```
 
-##4. Install Ruby
+## 4. Install Ruby
 In the connected VM terminal, run:
 
 ```
@@ -72,7 +75,7 @@ Check installed ruby:
 > ruby -v
 ``` 
 
-##5. Install Rails and several packages
+## 5. Install Rails and several packages
 In the VM terminal:
 
 ```
@@ -80,11 +83,11 @@ In the VM terminal:
 ```
 
 ```
-> cd rails_kadai
+> cd rails_kadai/windows
 > ./setup_win.sh
 ```
 
-##6. Build a sample app
+## 6. Build a sample app
 Change the host and port in the 'Vagrantfile'
 If you already started the VM, halt it with the halt command that mentioned above.
 
@@ -113,7 +116,7 @@ Then you should find the page in the browser with:
 http://localhost:3000/twitters
 ```
 
-##7. Upload and deploy with Heroku
+## 7. Upload and deploy with Heroku
 If you don't have an account for git and heroku, please create git and heroku accounts.
 
 ```

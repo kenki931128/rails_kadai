@@ -1,4 +1,4 @@
-# Practice of Information Dystem Design Ruby on rails format
+# Practice of Information System Design Ruby on rails format
 
 This is how to create the environment where you can use Ruby on rails.
 
