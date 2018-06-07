@@ -23,7 +23,7 @@ Macユーザを前提に作っていますので，それ以外の方はTAに尋
 1. `git clone https://github.com/kenki931128/rails_kadai.git`
 2. `cd rails_kadai`
 3. `rm -rf .git/`
-4. `./setup` (VirtualBoxとVagrantがインストール済みなら不要)
+4. `./setup.sh` (`./setup`) (VirtualBoxとVagrantがインストール済みなら不要)
 
 ## Ruby on railsの準備
 
