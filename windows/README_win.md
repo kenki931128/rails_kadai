@@ -118,14 +118,28 @@ http://localhost:3000/twitters
 
 ## 7. Upload and deploy with Heroku
 If you don't have an account for git and heroku, please create git and heroku accounts.
+Install heroku cli in this link with windows version: https://devcenter.heroku.com/articles/heroku-cli
+Then in windows prompt CMD (not in virtual machine), type the following commands 
 
 ```
+# cd to your project folder
+cd:/assmt/centos/(app name)
+
+# login with heroku, it will ask your email and password
 heroku login
 heroku create (server name) (server name should be long because you cannot use same name with anyone.)
 git init
 git add .
-git commit -m "initial commit"
+git commit -m "initial commit" 
+
+# if it request your git account, run the following command
+git config --global user.email "your email address"
+
 heroku git:remote -a (server name)
+
+# Before push, making sure that you have commented out the "gem 'sqlite3', group: :development" in Gemfile and replaced with pg "gem 'pg', group: :production"
+
 git push heroku master
 heroku run:detached rake db:migrate
 ```
+Then you can find your repo in heroku https://dashboard.heroku.com/apps
