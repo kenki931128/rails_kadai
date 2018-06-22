@@ -118,8 +118,42 @@ http://localhost:3000/twitters
 
 ## 7. Upload and deploy with Heroku
 If you don't have an account for git and heroku, please create git and heroku accounts.
+
+Also you can refer the procedure write in README_en.md
+
+Before upload, you have to change the database setting in Gemfile
+
+```
+#Comment out sqlite3 and replace with pg
+
+# gem 'sqlite3', group: :development
+gem 'pg', group: :production
+
+#In config/database.yml, production part:
+production:
+    <<: *default
+    adapter: postgresql
+    encoding: unicode
+    pool: 5
+    
+```
+
+Don't forget bundle install after changing the Gemfile
+```
+bundle install
+```
+
 Install heroku cli in this link with windows version: https://devcenter.heroku.com/articles/heroku-cli
-Then in windows prompt CMD (not in virtual machine), type the following commands 
+
+Then in windows prompt CMD (not in virtual machine)
+You can check if it is installed by:
+
+```
+heroku --version
+```
+
+Upload your project to heroku
+
 
 ```
 # cd to your project folder
@@ -137,9 +171,11 @@ git config --global user.email "your email address"
 
 heroku git:remote -a (server name)
 
-# Before push, making sure that you have commented out the "gem 'sqlite3', group: :development" in Gemfile and replaced with pg "gem 'pg', group: :production"
+# Before pushing, making sure that you have commented out the "gem 'sqlite3', group: :development" in Gemfile and replaced with pg "gem 'pg', group: :production"
 
 git push heroku master
 heroku run:detached rake db:migrate
 ```
 Then you can find your repo in heroku https://dashboard.heroku.com/apps
+
+Confirm the working on http://(server name).herokuapp.com/
